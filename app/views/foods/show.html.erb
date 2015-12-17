@@ -1,0 +1,19 @@
+<h1>Show page food</h1>
+    Name: <%= @food.name %><br>
+    Price: <%= @food.price %><br>
+    description: <%= @food.description %><br>
+
+
+
+    <div class="nav">
+    <%= button_to 'Edit food', edit_food_path(@food), method: :get, class: "btn btn-warning" %>
+    <!-- <a class="btn btn-primary" href="/voyages" role="button">Back to voyages</a> -->
+    <a class="btn btn-primary" href="/foods" role="button">Back to foods</a>
+
+  </div>
+
+
+  <!-- t.string :name
+  t.string :category
+  t.decimal :price
+  t.text :description -->

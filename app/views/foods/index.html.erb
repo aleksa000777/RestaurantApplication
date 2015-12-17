@@ -1,0 +1,20 @@
+<h1>woow food!yammi</h1>
+
+<% @foods.each do |food| %>
+  <h3> <%= food.name %> </h3>
+  <p> <%= food.category %> </p>
+  <h5> Price: <%=food.price %> </h5>
+  <h5> Description: <%= food.description %> </h5>
+  <span>
+    <%= link_to "Edit food", edit_food_path(food.id) %>
+    <%= link_to "View food", food_path(food.id) %>
+    <%= link_to "Delete food", food_path(food.id), method: 'delete' %>
+  </span>
+<% end %>
+
+<h4> <%= link_to "New food", new_food_path %>  </h4>
+
+<!-- t.string :name
+t.string :category
+t.decimal :price
+t.text :description -->

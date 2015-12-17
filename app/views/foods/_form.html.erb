@@ -1,0 +1,19 @@
+<%= form_for @food do |f| %>
+  <%= f.label :name, "Name of course" %>
+  <%= f.text_field :name %><br>
+  <%= f.label :category, "Category" %>
+  <%= f.text_field :category %><br>
+  <%= f.label :description, "Description" %>
+  <%= f.text_field :description %><br>
+  <%= f.label :price, "Price" %>
+  <%= f.number_field :price %><br>
+  <%-# Admin: <%= current_admin.username <br> -%>
+  <%= f.submit %>
+
+<% end %>
+
+
+<!-- t.string :name
+t.string :category
+t.decimal :price
+t.text :description -->
