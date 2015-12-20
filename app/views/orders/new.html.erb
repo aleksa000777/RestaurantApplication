@@ -1,0 +1,26 @@
+<%#= render "form" %>
+<%# binding.pry %>
+<!-- , url: party_order_path(@party.id) -->
+<!-- articles_path -->
+<%= form_for @order, url: party_orders_path do |f|  %>
+  <%= f.collection_select :food_id, Food.all, :id, :name, include_blank: true %>
+  <!-- <%#= f.collection_select :party_id, Party.all, :id, :name, include_blank: true %> -->
+  <%= f.label :quantity, "Quantity" %>
+  <%= f.number_field :quantity %><br>
+  <%= f.label :comment, "Comment to order" %>
+  <%= f.text_field :comment %><br>
+  <%= label :active, "on the way" %>
+  <%= f.radio_button :active, false , :checked => true , :value => false %><br>
+  <%= label :active, "done"%>
+  <%= f.radio_button :active, true, :value => true%><br>
+
+  <%-# Server: <%= current_server.name <br> -%>
+  <%= f.submit%>
+
+<% end %>
+
+<% if flash[:error] %>
+  <% flash[:error].each do |error| %>
+    <p class="error"> <%= error %> </p>
+  <% end %>
+<% end %>

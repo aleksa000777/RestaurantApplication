@@ -1,0 +1,31 @@
+<!-- create_table :tables do |t|
+  t.string :name
+  t.boolean :status
+  t.string :shape
+  t.string :location
+  t.integer :party_id
+  t.integer :server_id -->
+
+  <h1>List of Tables!Tablet descs</h1>
+
+  <% @tables.each do |table| %>
+  <%# binding.pry %>
+    <h3>Table name <%= table.name %> </h3>
+    <p> Table status: <%= table.status %> </p>
+    <p> Table shape: <%= table.shape %> </p>
+    <p>Table location: <%= table.location %> </p>
+    <h5> Party: <%#=table.party.name %> </h5>
+    <h5> Pay status: <%#=table.party.pay_status %> </h5>
+    <h5> Bill: <%#=table.party.bill %> </h5>
+    <h5> Server: <%#=table.server.name %> </h5>
+
+
+
+    <span>
+      <%= link_to "Edit table", edit_table_path(table.id) %>
+      <%= link_to "View table", table_path(table.id) %>
+      <%= link_to "Delete table", table_path(table.id), method: 'delete' %>
+    </span>
+  <% end %>
+
+  <h4> <%= link_to "New table", new_table_path %>  </h4>

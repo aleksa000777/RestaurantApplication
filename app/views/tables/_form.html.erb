@@ -1,0 +1,27 @@
+<%= form_for @table do |f| %>
+  <%# = f.collection_select :server_id, Server.all, :id, :name,  include_blank: true %>
+  <%#= f.collection_select :party_id, Party.all, :id, :name, include_blank: true %>
+  <%= f.label :name, "name" %>
+  <%= f.text_field :name %><br>
+  <%= f.label :shape, "shape of table" %>
+  <%= f.text_field :shape %><br>
+  <%= label :status, "free" %>
+  <%= f.radio_button :status, false , :checked => true , :value => false %><br>
+  <%= label :status, "occupaed"%>
+  <%= f.radio_button :status, true, :value => true %><br>
+  <%= f.label :location, "location" %>
+  <%= f.text_field :location %><br>
+
+  <%-# Server: <%= current_server.name <br> -%>
+  <%= f.submit %>
+
+<% end %>
+
+
+<!-- create_table :tables do |t|
+  t.string :name
+  t.boolean :status
+  t.string :shape
+  t.string :location
+  t.integer :party_id
+  t.integer :server_id -->

@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151217214919) do
+ActiveRecord::Schema.define(version: 20151218190431) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admins", force: :cascade do |t|
+    t.string   "name"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "foods", force: :cascade do |t|
     t.string   "name"
@@ -23,6 +30,45 @@ ActiveRecord::Schema.define(version: 20151217214919) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "quantity"
+    t.text     "comment"
+    t.boolean  "active"
+    t.integer  "food_id"
+    t.integer  "party_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "parties", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "nmofpeople"
+    t.boolean  "pay_status"
+    t.decimal  "bill"
+    t.string   "mood"
+    t.integer  "order_id"
+    t.integer  "table_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "servers", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tables", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "status"
+    t.string   "shape"
+    t.string   "location"
+    t.integer  "party_id"
+    t.integer  "server_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

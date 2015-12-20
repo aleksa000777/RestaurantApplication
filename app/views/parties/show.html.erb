@@ -1,0 +1,36 @@
+<h1>Show page parties</h1>
+
+    <!-- Name: <%#= @party.name %><br> -->
+    number of people: <%= @party.nmofpeople %><br>
+    <!-- binding.pry -->
+
+    pay_status: <%= @party.pay_status %><br>
+    bill: <%= @party.bill %><br>
+    Mood: <%= @party.mood %><br>
+    table name: <%= @party.table.name %><br>
+    location: <%= @party.table.location %><br>
+
+    orders: <%# @orders.each do |order| %>
+    <%# binding.pry %>
+        <%#= order.food.name %>
+        <%# end %>
+
+    <%= link_to "new order", new_party_order_path(@party.id) %>
+<h4> <%#= link_to "New order", new_order_path(@party.id) %>  </h4>
+
+
+    <!-- create_table :parties do |t|
+      t.string :name
+      t.integer :nmofpeople
+      t.boolean :pay_status
+      t.decimal :bill
+      t.string :mood
+      t.integer :order_id
+      t.integer :table_id -->
+
+    <div class="nav">
+    <%= button_to 'Edit party', edit_party_path(@party), method: :get, class: "btn btn-warning" %>
+    <!-- <a class="btn btn-primary" href="/voyages" role="button">Back to voyages</a> -->
+    <a class="btn btn-primary" href="/parties" role="button">Back to parties</a>
+
+  </div>

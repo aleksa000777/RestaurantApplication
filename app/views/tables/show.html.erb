@@ -1,0 +1,25 @@
+<h1>Show page Tables</h1>
+
+    table Name: <%= @table.name %><br>
+    <!-- table number of people: <%#= @table.party.nmofpeople %><br> -->
+    Status: <%= @table.status %><br>
+    shape: <%= @table.shape %><br>
+    location: <%= @table.location %><br>
+    Server name: <%#= @table.server.name %><br>
+
+
+
+    <!-- create_table :tables do |t|
+      t.string :name
+      t.boolean :status
+      t.string :shape
+      t.string :location
+      t.integer :party_id
+      t.integer :server_id -->
+
+    <div class="nav">
+    <%= button_to 'Edit table', edit_table_path(@table), method: :get, class: "btn btn-warning" %>
+    <!-- <a class="btn btn-primary" href="/voyages" role="button">Back to voyages</a> -->
+    <a class="btn btn-primary" href="/parties" role="button">Back to parties</a>
+
+  </div>

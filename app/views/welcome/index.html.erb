@@ -1,4 +1,8 @@
 <h1>hi admin or server</h1>
-
 <a href="/admins">Admin</a>
-<a href="/servers">Server</a>
+<!-- <a href="/servers">Server</a> -->
+<% @tables.each do |table| %>
+<%# binding.pry %>
+  <h3>Table name <%= table.name %><a href="/tables/<%= table.id %>"><%= table.name %></a> </h3>
+  <p> Table status: <%= table.status %> </p>
+  <% end %>

@@ -1,9 +1,22 @@
 Rails.application.routes.draw do
 
   root 'welcome#index'
-  resources :admins
+  # resources :admins
   resources :servers
   resources :foods
+  # resources :orders
+  resources :parties do
+    resources :orders
+  end
+  resources :tables
+  post '/sessions' => 'sessions#create'
+  delete '/sessions' => 'sessions#destroy'
+
+  resources :admins
+  get '/log_in' => 'admins#log_in'
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
