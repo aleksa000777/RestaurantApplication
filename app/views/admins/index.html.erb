@@ -1,6 +1,21 @@
 <h1>Welcome Admin!Rule the world!</h1>
+<%= button_to "Log Out", sessions_path, method: :delete %>
   <!-- here is sing in form (usernme and password)
   and also create a new admin (username, password, conformation_passsowrd, email, phone, fullname -->
   <!-- or create _form in task? -->
    <!-- when sign in go to show -->
-  
+   <h1>Create a new server</h1>
+   <%= form_for @server do |f| %>
+     <%= f.text_field :name %>
+     <%= f.submit %>
+   <% end %>
+
+   <% @servers.each do |server| %>
+   <h3> <%= server.name %> </h3>
+   <%= button_to 'Remove Server', admin_path(server), method: :delete, class: "btn btn-danger" %>
+
+     <%#= link_to "Edit Task", edit_task_path(task.id) %>
+     <%#= link_to "View Task", task_path(task.id) %>
+     <%#= link_to "Delete Task", task_path(task.id), method: 'delete' %>
+
+ <% end %>

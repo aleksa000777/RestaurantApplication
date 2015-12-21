@@ -2,8 +2,8 @@
 <!-- <%# binding.pry %> -->
 
   <%= f.collection_select :table_id, Table.all, :id, :name, include_blank: true %>
-
-  <%#-- <%= f.collection_select :party_id, Party.all, :id, :name, , include_blank: true %>
+<%# binding.pry %>
+  <%= f.collection_select :server_id, Server.all, :id, :name, include_blank: true %>
   <!-- <%#= f.label :name, "name" %>
   <%#= f.text_field :name %><br> -->
   <%= f.label :nmofpeople, "Number of people" %>

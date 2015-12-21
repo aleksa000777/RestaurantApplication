@@ -1,6 +1,7 @@
 class PartiesController < ApplicationController
   def index
     @parties = Party.all
+  
   end
 
   def create
@@ -32,9 +33,11 @@ class PartiesController < ApplicationController
   end
 
   def show
+    @total
     @party = Party.find(params[:id])
     @orders = Order.all
     @food = Food.all
+    @server = Server.all
 
   end
 
@@ -46,7 +49,7 @@ class PartiesController < ApplicationController
 
   private
   def party_params
-    parameters = params.require(:party).permit(:order_id, :table_id, :name, :nmofpeople, :pay_status, :bill, :mood)
+    parameters = params.require(:party).permit(:order_id, :table_id, :server_id, :name, :nmofpeople, :pay_status, :bill, :mood)
   end
 
     # t.string :name

@@ -1,9 +1,12 @@
 <h1>List of parties!People</h1>
 
 <% @parties.each do |party| %>
+
+<h3>Table: <%= party.table.name %></h3>
 <%# binding.pry %>
-  <h3> <%= party.nmofpeople %> </h3>
-  <p> <%= party.pay_status %> </p>
+<h3>Server: <%#=party.table.server.name %></h3>
+  <h3> Number of people: <%= party.nmofpeople %> </h3>
+  <p>Pay status:  <%= party.pay_status %> </p>
   <h5> Bill: <%= party.bill %> </h5>
   <h5> Description: <%= party.mood %> </h5>
   <span>

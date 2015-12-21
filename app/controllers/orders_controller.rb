@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
     @party = Party.find(params[:party_id])
     @order = Order.create(order_params)
     # party.order.create(order_params)
-    redirect_to party_order_path
+    redirect_to party_orders_path
   end
 
   def new
@@ -39,6 +39,7 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @party = Party.all
+
 
   end
 

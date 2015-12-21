@@ -1,8 +1,11 @@
 <h1>hi admin or server</h1>
 <a href="/admins">Admin</a>
+<h3>Welcome <%#= current_admin.name %></h3>
+<%= button_to "Log in", log_in_path, method: :get %>
+<%= button_to "Log Out", sessions_path, method: :delete %>
 <!-- <a href="/servers">Server</a> -->
 <% @tables.each do |table| %>
 <%# binding.pry %>
-  <h3>Table name <%= table.name %><a href="/tables/<%= table.id %>"><%= table.name %></a> </h3>
+  <h3>Table name   <a href="/tables/<%= table.id %>"><%= table.name %></a> </h3>
   <p> Table status: <%= table.status %> </p>
   <% end %>

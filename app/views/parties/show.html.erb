@@ -1,19 +1,43 @@
 <h1>Show page parties</h1>
 
+
     <!-- Name: <%#= @party.name %><br> -->
     number of people: <%= @party.nmofpeople %><br>
-    <!-- binding.pry -->
+
 
     pay_status: <%= @party.pay_status %><br>
-    bill: <%= @party.bill %><br>
+    <!-- bill: <%#=@total %><br> -->
+
     Mood: <%= @party.mood %><br>
     table name: <%= @party.table.name %><br>
     location: <%= @party.table.location %><br>
 
-    orders: <%# @orders.each do |order| %>
-    <%# binding.pry %>
-        <%#= order.food.name %>
-        <%# end %>
+<%# binding.pry %>
+    Server: <%# @party.server.name %> <br>
+
+    orders: <br>
+    <ul>
+      <% @total = 0 %>
+    <% @orders.each do |order| %>
+
+    <% if order.party==nil %>
+    <% else %>
+
+    <% if @party.id == order.party.id %>
+
+    <li>
+    <%= order.quantity %>  *  <%= order.food.name %> :<%= order.food.price%>$  total: <%= order.food.price*order.quantity %> $
+    <% @total+=order.food.price*order.quantity %>
+    <% @party.bill = @total%>
+</li>
+
+        <% end %>
+
+        <% end %>
+
+        <% end %>
+</ul>
+TOTAL: $<%= @total %><br>
 
     <%= link_to "new order", new_party_order_path(@party.id) %>
 <h4> <%#= link_to "New order", new_order_path(@party.id) %>  </h4>

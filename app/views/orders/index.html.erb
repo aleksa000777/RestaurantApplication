@@ -7,10 +7,11 @@
   <h5> Price: <%=order.food.price %> </h5>
   <h5> Description: <%= order.food.description %> </h5>
   <span>
-    <%= link_to "Edit order", edit_order_path(order.id) %>
-    <%= link_to "View order", order_path(order.id) %>
-    <%= link_to "Delete order", order_path(order.id), method: 'delete' %>
+    <%#= link_to "Edit order", edit_order_path(order.id) %>
+    <%#= link_to "View order", order_path(order.id) %>
+    <%#= link_to "Delete order", order_path(order.id), method: 'delete' %>
   </span>
 <% end %>
 
-<h4> <%= link_to "New order", new_order_path %>  </h4>
+<h4> <%#= link_to "New order", new_order_path %>  </h4>
+<h1><%= link_to "parties order", parties_path %></h1>

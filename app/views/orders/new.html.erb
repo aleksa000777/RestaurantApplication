@@ -4,6 +4,7 @@
 <!-- articles_path -->
 <%= form_for @order, url: party_orders_path do |f|  %>
   <%= f.collection_select :food_id, Food.all, :id, :name, include_blank: true %>
+  <%= f.hidden_field :party_id, value: @party['id']%>
   <!-- <%#= f.collection_select :party_id, Party.all, :id, :name, include_blank: true %> -->
   <%= f.label :quantity, "Quantity" %>
   <%= f.number_field :quantity %><br>
@@ -14,7 +15,6 @@
   <%= label :active, "done"%>
   <%= f.radio_button :active, true, :value => true%><br>
 
-  <%-# Server: <%= current_server.name <br> -%>
   <%= f.submit%>
 
 <% end %>

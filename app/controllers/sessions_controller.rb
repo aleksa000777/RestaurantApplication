@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     admin = Admin.find_by_name(params[:name])
     if admin && admin.authenticate(params[:password])
       session[:admin_id] = admin.id
-      redirect_to foods_path
+      redirect_to admins_path
     else
       redirect_to log_in_path
     end

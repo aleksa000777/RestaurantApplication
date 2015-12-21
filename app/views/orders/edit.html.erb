@@ -1,3 +1,6 @@
+<h3>Welcome <%= current_admin.name %>: Food!</h3>
+
+<%= button_to "Log Out", sessions_path, method: :delete %>
 <%= render "form" %>
 
 <% if flash[:error] %>

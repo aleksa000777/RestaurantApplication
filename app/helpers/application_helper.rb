@@ -8,4 +8,10 @@ module ApplicationHelper
   def authenticate!
     redirect_to log_in_path unless current_admin
   end
+
+  def total
+    @total = 0
+    @total+=order.food.price*order.quantity
+    return @total
+  end
 end

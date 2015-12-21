@@ -6,9 +6,9 @@
   <%= f.label :shape, "shape of table" %>
   <%= f.text_field :shape %><br>
   <%= label :status, "free" %>
-  <%= f.radio_button :status, false , :checked => true , :value => false %><br>
+  <%= f.radio_button :status, true , :checked => true , :value => "free" %><br>
   <%= label :status, "occupaed"%>
-  <%= f.radio_button :status, true, :value => true %><br>
+  <%= f.radio_button :status, false, :value => "occupaed" %><br>
   <%= f.label :location, "location" %>
   <%= f.text_field :location %><br>
 
