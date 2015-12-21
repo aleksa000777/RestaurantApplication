@@ -1,5 +1,5 @@
 class Table < ActiveRecord::Base
-  has_one :party
+  belongs_to :party
   has_many :orders, through: :parties
-  has_one :server
+  belongs_to :server
 end

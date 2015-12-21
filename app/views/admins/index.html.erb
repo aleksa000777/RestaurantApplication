@@ -13,9 +13,8 @@
    <% @servers.each do |server| %>
    <h3> <%= server.name %> </h3>
    <%= button_to 'Remove Server', admin_path(server), method: :delete, class: "btn btn-danger" %>
-
-     <%#= link_to "Edit Task", edit_task_path(task.id) %>
      <%#= link_to "View Task", task_path(task.id) %>
      <%#= link_to "Delete Task", task_path(task.id), method: 'delete' %>
-
  <% end %>
+
+ <%= link_to "Go to main page", root_path %>

@@ -1,17 +1,14 @@
 <h1>List of orders!yammi</h1>
-
+<ul>
 <% @orders.each do |order| %>
 <%# binding.pry %>
-  <h3> <%= order.food.name %> </h3>
-  <p> <%= order.food.category %> </p>
-  <h5> Price: <%=order.food.price %> </h5>
-  <h5> Description: <%= order.food.description %> </h5>
-  <span>
-    <%#= link_to "Edit order", edit_order_path(order.id) %>
-    <%#= link_to "View order", order_path(order.id) %>
-    <%#= link_to "Delete order", order_path(order.id), method: 'delete' %>
-  </span>
+  <ol>  <h3> <%= order.food.name %> </h3>
+    <p>Quantity:  <%= order.quantity %></p>
+    <p>Category:  <%= order.food.category %> </p>
+    <h5> Price: <%=order.food.price %> </h5>
+    <!-- <h5> Description: <%#= order.food.description %> </h5> -->
+  </ol>
 <% end %>
-
+</ul>
 <h4> <%#= link_to "New order", new_order_path %>  </h4>
-<h1><%= link_to "parties order", parties_path %></h1>
+<h1><%= link_to "List of parties", parties_path %></h1>

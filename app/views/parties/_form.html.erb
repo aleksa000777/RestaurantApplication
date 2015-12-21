@@ -1,7 +1,7 @@
 <%= form_for @party do |f| %>
 <!-- <%# binding.pry %> -->
 
-  <%= f.collection_select :table_id, Table.all, :id, :name, include_blank: true %>
+  <%= f.collection_select :table_id, @tables, :id, :name, include_blank: true %>
 <%# binding.pry %>
   <%= f.collection_select :server_id, Server.all, :id, :name, include_blank: true %>
   <!-- <%#= f.label :name, "name" %>

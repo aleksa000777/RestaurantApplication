@@ -1,7 +1,7 @@
 class PartiesController < ApplicationController
   def index
     @parties = Party.all
-  
+    # binding.pry
   end
 
   def create
@@ -13,6 +13,8 @@ class PartiesController < ApplicationController
 
   def new
     @party = Party.new
+    @tables = Table.where("status = ?", true)
+
   end
 
   def update
