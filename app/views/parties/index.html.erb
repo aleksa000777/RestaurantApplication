@@ -2,19 +2,22 @@
 <%= link_to "List of tables", tables_path %>
 
 <% @parties.each do |party| %>
-
+<% if party.table == nil%>
+<% else %>
 <h3>Table: <%= party.table.name %></h3>
-<%# binding.pry %>
+    <% party.table.update_attribute :status, :value => false %>
 <h3>Server: <%= party.server.name %></h3>
   <h3> Number of people: <%= party.nmofpeople %> </h3>
   <p>Pay status:  <%= party.pay_status %> </p>
-  <h5> Bill: <%= party.bill %> </h5>
+  <%# binding.pry %>
+  <h5> Bill: $ <%= party.bill %> </h5> <a href="/party/<%= party.id %>/bill">RECIEPT</a>
   <h5> Description: <%= party.mood %> </h5>
   <span>
     <%= link_to "Edit party", edit_party_path(party.id) %>
     <%= link_to "View party", party_path(party.id) %>
     <%= link_to "Delete party", party_path(party.id), method: 'delete' %>
   </span>
+  <% end %>
 <% end %>
 
 <h4> <%= link_to "New party", new_party_path %>  </h4>

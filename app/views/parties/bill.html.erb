@@ -1,0 +1,34 @@
+<h1>hello bill</h1>
+    <!-- table Number
+    num of guest
+    server name
+    food name
+    quantity
+    price
+
+    tax 8.875
+    total
+    tip -->
+    <%# binding.pry %>
+   <%= @table.name %>
+   <%= @party.nmofpeople %>
+   <%= @party.server.name %>
+    <% @orders.each do |order| %>
+      <%=  order.food.name %>
+      $<%= order.food.price %>
+    <% end %>
+    $<%= @party.bill %>
+    <% @tax = @party.bill-(@party.bill*0.8875) %>
+    <%#= @party.bill-(@party.bill*0.8875) %>
+    <h3>tax: $<%= @tax %></h3>
+    <% @includeTax = @tax+@party.bill %>
+    <h2>Total include tax: $<%= @includeTax %></h2>
+    <h2>recommended tips: </h2>
+    <h3>10%: $ <%= '%.2f' % (@includeTax*0.1) %></h3>
+    <h3>15%: $ <%= '%.2f' % (@includeTax*0.15) %></h3>
+    <h3>20%: $ <%= '%.2f' % (@includeTax*0.2) %></h3>
+
+    <%= form_for @party do |party|%>
+      <%= party.hidden_field :pay_status, :value => true %>
+      <%= party.submit '** PAID **'%>
+    <%end%>

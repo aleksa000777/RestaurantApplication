@@ -1,6 +1,7 @@
 class PartiesController < ApplicationController
   def index
     @parties = Party.all
+    @tables = Table.all
     # binding.pry
   end
 
@@ -45,8 +46,20 @@ class PartiesController < ApplicationController
 
   def destroy
     @party = Party.find(params[:id])
+    @table = @party.table
+    @table.status = true
+    @table.save
     @party.destroy
+
+
     redirect_to parties_path
+  end
+
+
+  def bill
+    @party = Party.find(params[:id])
+    @table = @party.table
+    @orders = @party.orders
   end
 
   private

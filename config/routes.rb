@@ -11,9 +11,12 @@ Rails.application.routes.draw do
   resources :tables
   post '/sessions' => 'sessions#create'
   delete '/sessions' => 'sessions#destroy'
-
+  get '/orders' =>'orders#index'
+  resources :orders
+  # delete '/orders/:id' => 'orders#destroy'
   resources :admins
   get '/log_in' => 'admins#log_in'
+  get '/party/:id/bill' =>'parties#bill'
 
 
 

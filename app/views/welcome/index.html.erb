@@ -1,13 +1,13 @@
 <h1>RestaurAPP</h1>
-<a href="/admins">Admin</a>
-<h3>Welcome <%#= current_admin.name %></h3>
-<%= button_to "Log in", log_in_path, method: :get %>
-<%= button_to "Log Out", sessions_path, method: :delete %>
+<!-- <a href="/admins">Admin</a> -->
+<%= button_to "Admin Log In", log_in_path, method: :get %>
+<%= button_to "START", parties_path, method: :get %>
+<%#= button_to "Log Out", sessions_path, method: :delete %>
 <!-- <a href="/servers">Server</a> -->
-<% @tables.each do |table| %>
+<!-- <%# @tables.each do |table| %>
 <%# binding.pry %>
-  <h3>Table:   <a href="/tables/<%= table.id %>"><%= table.name %></a> </h3>
-  <p> Table status: <%= table.status %> </p>
+  <h3>Table:   <a href="/tables/<%#= table.id %>"><%#= table.name %></a> </h3>
+  <p> Table status: <%#= table.status %> </p>
   <p>Paid: </p>
   <p>Server: </p>
-  <% end %>
+  <%# end %> -->
