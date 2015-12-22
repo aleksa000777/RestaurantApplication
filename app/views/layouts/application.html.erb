@@ -11,14 +11,34 @@
 
  <!-- Latest compiled and minified JavaScript -->
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
+<link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="navbar navbar-default navbar-top">
+    <div class="container">
+      <div class="navbar-header">
+      <a class="navbar-brand" href="/">
+        <img id="logo" src="/img/geko.png" alt="" />
+        <span>GekkoRest</span></a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
+          <li><a href="/parties">Parties</a></li>
+          <li><a href="/tables">Tables</a></li>
+          <li><a href="/orders">Chef's</a></li>
 
-<%= yield %>
-
+        </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <%= yield %>
+    </div>
+  </div>
+</div>
 </body>
 </html>

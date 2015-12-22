@@ -13,4 +13,28 @@
  *= require_tree .
  *= require_self
  */
- 
+ body {
+   background-image: url('http://eskipaper.com/images/cool-light-green-wallpaper-2.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+ }
+ span {
+   font-family: 'Permanent Marker', cursive;
+ }
+
+#parties, .create,{
+  margin: 0 auto;
+  text-align: center;
+  width: 70%%;
+}
+img {
+  width: 60px;
+  height: 40px;
+}
+
+#logo {
+  padding: 0;
+  width: 40px;
+  height: 25px;
+  float: right;
+}

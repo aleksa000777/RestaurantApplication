@@ -1,7 +1,18 @@
-<%= form_tag sessions_path do %>
-  <%= text_field_tag :name %>
-  <%= password_field_tag :password %>
-  <%= submit_tag "Log In" %>
-<% end %>
-
-<h4> <%= link_to "Back", root_path %>  </h4>
+<div class="row" id="log_in">
+  <h1>Admin</h1>
+  <%= form_tag sessions_path , :class => "form" do %>
+  <div class="form-group">
+    <%= label_tag 'name', 'Username' %><br>
+    <%= text_field_tag :name%>
+  </div>
+  <div class="form-group">
+    <%= label_tag 'password', 'Password' %><br>
+    <%= password_field_tag :password %>
+  </div>
+  <div class="form-group">
+    <%= submit_tag "Log In", class: 'btn btn-success' %>
+  </div>
+  <% end %>
+  <%= button_to "Sign up", new_admin_path, class: 'btn btn-primary', method: :get %>
+  <h4> <%= link_to "Back", root_path %>  </h4>
+</div>

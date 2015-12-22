@@ -1,20 +1,17 @@
-<h1>Welcome Admin!Rule the world!</h1>
-<%= button_to "Log Out", sessions_path, method: :delete %>
-  <!-- here is sing in form (usernme and password)
-  and also create a new admin (username, password, conformation_passsowrd, email, phone, fullname -->
-  <!-- or create _form in task? -->
-   <!-- when sign in go to show -->
-   <h1>Create a new server</h1>
+<%= button_to "Log Out", sessions_path, class: 'btn btn-danger', method: :delete %>
+
+<div class="row" id='admin'>
+  <h1>Welcome <%= current_admin.name %> !</h1>
+<h2>Add server name</h2>
    <%= form_for @server do |f| %>
      <%= f.text_field :name %>
-     <%= f.submit %>
+     <%= f.submit 'ADD', class: "btn btn-success" %>
    <% end %>
 
-   <% @servers.each do |server| %>
-   <h3> <%= server.name %> </h3>
-   <%= button_to 'Remove Server', admin_path(server), method: :delete, class: "btn btn-danger" %>
-     <%#= link_to "View Task", task_path(task.id) %>
-     <%#= link_to "Delete Task", task_path(task.id), method: 'delete' %>
- <% end %>
+     <% @servers.each do |server| %>
+     <h5> <%= server.name %></h5>
+     <%= button_to 'Remove Server', admin_path(server), method: :delete, class: "btn btn-danger" %>
+   <% end %>
 
- <%= link_to "Go to main page", root_path %>
+</div>
+ <%#= link_to "Go to main page", root_path %>

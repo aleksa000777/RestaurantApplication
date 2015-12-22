@@ -1,15 +1,13 @@
-<h1>RestaurAPP</h1>
-<!-- <a href="/admins">Admin</a> -->
-<%= button_to "Admin Log In", log_in_path, method: :get %>
-<%= button_to "Admin new", new_admin_path, method: :get %>
-
-<%= button_to "START", parties_path, method: :get %>
-<%#= button_to "Log Out", sessions_path, method: :delete %>
-<!-- <a href="/servers">Server</a> -->
-<!-- <%# @tables.each do |table| %>
-<%# binding.pry %>
-  <h3>Table:   <a href="/tables/<%#= table.id %>"><%#= table.name %></a> </h3>
-  <p> Table status: <%#= table.status %> </p>
-  <p>Paid: </p>
-  <p>Server: </p>
-  <%# end %> -->
+<div class="row" id ='weclome'>
+  <h1><span>GekkoRest</span>
+<img src="/img/geko.png" alt="" />
+  </h1>
+  <% if current_admin!= nil %>
+  <%= current_admin.name %>
+  <%= button_to "Log Out", sessions_path, class: 'btn btn-danger', method: :delete %>
+  <% elsif %>
+  <%= button_to "Admin Log In", log_in_path, class: 'btn btn-primary', method: :get %>
+  <% end %>
+  <%= button_to "START", parties_path, class: 'btn btn-info', method: :get %>
+  <%= button_to "Chef", orders_path, class: 'btn btn-warning', method: :get %>
+</div>

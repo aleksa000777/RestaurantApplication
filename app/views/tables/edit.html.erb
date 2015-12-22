@@ -1,6 +1,8 @@
-<h3>Welcome <%#= current_admin.name %>: admin name</h3>
+<div class="row log_out">
+<%= button_to "Log Out", sessions_path, method: :delete , class: 'btn btn-danger'%>
+</div>
+<h3><%= current_admin.name %>: admin</h3>
 
-<%= button_to "Log Out", sessions_path, method: :delete %>
 <%= render "form" %>
 
 <% if flash[:error] %>

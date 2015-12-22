@@ -1,29 +1,28 @@
-<h1>List of parties!People</h1>
-<%= link_to "List of tables", tables_path %>
-
+<div class="row" id="parties">
+<h1>Parties</h1>
+<%= button_to "New Party", new_party_path, class: 'btn btn-success', method: :get %>
 <% @parties.each do |party| %>
-<% if party.table == nil%>
-<% else %>
-<h3>Table: <%= party.table.name %></h3>
-    <% party.table.update_attribute :status, :value => false %>
-<h3>Server: <%= party.server.name %></h3>
-  <h3> Number of people: <%= party.nmofpeople %> </h3>
-  <p>Pay status:  <%= party.pay_status %> </p>
-  <%# binding.pry %>
-  <h5> Bill: $ <%= party.bill %> </h5> <a href="/party/<%= party.id %>/bill">RECIEPT</a>
-  <h5> Description: <%= party.mood %> </h5>
-  <span>
-    <%= link_to "Edit party", edit_party_path(party.id) %>
-    <%= link_to "View party", party_path(party.id) %>
-    <%= link_to "Delete party", party_path(party.id), method: 'delete' %>
-  </span>
+  <% if party.table == nil%>
+  <% else %>
+  <h3>Table: <a href="/tables/<%= party.table.id %>/"><%= party.table.name %></a></h3>
+      <% party.table.update_attribute :status, :value => false %>
+  <h4>Server: <%= party.server.name %></h4>
+  <h5> Number of people: <%= party.nmofpeople %> </h5>
+  <h5>Pay status:  <%= party.pay_status %> </h5>
+  <h5> Bill: $ <%= party.bill %>
+    <% if party.bill==nil %>
+    <% else %>
+      </h5> <a href="/party/<%= party.id %>/bill">RECIEPT</a>
+    <% end %>
+    <h5> Mood of party: <%= party.mood %> </h5>
+    <%= button_to "Edit party", edit_party_path(party.id), class: 'btn btn-warning', method: :get %>
+    <%= button_to "View party", party_path(party.id), class: 'btn btn-info', method: :get %>
+    <%= button_to "Delete party", party_path(party.id), class: 'btn btn-danger', method: 'delete' %>
+    <% end %>
   <% end %>
-<% end %>
+  </div>
 
-<h4> <%= link_to "New party", new_party_path %>  </h4>
-<!-- # t.integer :nmofpeople
-# t.boolean :pay_status
-# t.decimal :bill
-# t.string :mood
-# t.integer :order_id
-# t.integer :table_id -->
+
+      <%#= link_to "View party", party_path(party.id) %>
+      <%#= link_to "Delete party", party_path(party.id), method: 'delete' %>
+      <%#= link_to "Edit party", edit_party_path(party.id) %>

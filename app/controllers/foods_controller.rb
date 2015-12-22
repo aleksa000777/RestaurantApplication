@@ -24,6 +24,7 @@ class FoodsController < ApplicationController
   end
 
   def edit
+    authenticate!
     @food = Food.find(params[:id])
   end
 
@@ -33,6 +34,7 @@ class FoodsController < ApplicationController
   end
 
   def destroy
+    authenticate!
     @food = Food.find(params[:id])
     @food.destroy
     redirect_to foods_path

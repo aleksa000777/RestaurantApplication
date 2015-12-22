@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   def index
+    authenticate!
     @orders = Order.all
     @parties = Party.all
     @foods = Food.all
@@ -9,7 +10,7 @@ class OrdersController < ApplicationController
     @party = Party.find(params[:party_id])
     @order = Order.create(order_params)
     # party.order.create(order_params)
-    redirect_to party_orders_path
+    redirect_to party_path(@party.id)
   end
 
   def new
@@ -31,6 +32,7 @@ class OrdersController < ApplicationController
   end
 
   def edit
+    authenticate!
     @order = Order.find(params[:id])
     @food = Food.all
     @party = Party.all

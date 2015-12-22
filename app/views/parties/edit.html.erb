@@ -4,7 +4,9 @@
 
   <%#= f.collection_select :table_id, @tables, :id, :name, include_blank: true %>
 <%# binding.pry %>
-  <%= f.collection_select :server_id, Server.all, :id, :name, include_blank: true %>
+<%= f.label :name, "server" %>
+
+  <%= f.collection_select :server_id, Server.all, :id, :name, include_blank: true %><br>
   <!-- <%#= f.label :name, "name" %>
   <%#= f.text_field :name %><br> -->
   <%= f.label :nmofpeople, "Number of people" %>
@@ -15,9 +17,7 @@
   <%= f.radio_button :pay_status, true, :value => true%><br>
   <%= f.label :mood, "mood" %>
   <%= f.text_field :mood %><br>
-
-  <%-# Server: <%= current_server.name <br> -%>
-  <%= f.submit %>
+  <%= f.submit 'edit party', class: 'btn btn-warning'%>
 
 <% end %>
 

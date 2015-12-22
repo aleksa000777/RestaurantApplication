@@ -1,27 +1,15 @@
-<!-- create_table :tables do |t|
-  t.string :name
-  t.boolean :status
-  t.string :shape
-  t.string :location
-  t.integer :party_id
-  t.integer :server_id -->
-
+<div class="row">
   <h1>List of Tables!Tablet descs</h1>
+  <%= button_to "new table", new_table_path, method: 'get', class: "btn btn-success" %>
 
   <% @tables.each do |table| %>
-  <%# binding.pry %>
     <h3>Table name <%= table.name %> </h3>
     <p> Table status: <%= table.status %> </p>
     <p> Table shape: <%= table.shape %> </p>
     <p>Table location: <%= table.location %> </p>
+    <%= button_to "Delete table", table_path(table.id), method: 'delete', class: "btn btn-danger" %>
+    <%= button_to "Edit table", edit_table_path(table.id), method: 'get', class: "btn btn-warning" %>
+    <%= button_to "View table", table_path(table.id), method: 'get', class: "btn btn-info" %>
 
-
-
-    <span>
-      <%= link_to "Edit table", edit_table_path(table.id) %>
-      <%= link_to "View table", table_path(table.id) %>
-      <%= link_to "Delete table", table_path(table.id), method: 'delete' %>
-    </span>
   <% end %>
-
-  <h4> <%= link_to "New table", new_table_path %>  </h4>
+</div>

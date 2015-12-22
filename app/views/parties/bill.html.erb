@@ -1,34 +1,40 @@
-<h1>hello bill</h1>
-    <!-- table Number
-    num of guest
-    server name
-    food name
-    quantity
-    price
+<h1>Thank You!</h1>
 
-    tax 8.875
-    total
-    tip -->
-    <%# binding.pry %>
-   <%= @table.name %>
-   <%= @party.nmofpeople %>
-   <%= @party.server.name %>
-    <% @orders.each do |order| %>
-      <%=  order.food.name %>
-      $<%= order.food.price %>
-    <% end %>
-    $<%= @party.bill %>
+   Table name: <%= @table.name %><br>
+   Number of people: <%= @party.nmofpeople %><br>
+   Server: <%= @party.server.name %>
+
+    <table class="table col-xs-6">
+      <thead>
+          <tr>
+            <th>Food Item</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @orders.each do |order| %>
+            <tr>
+              <td><%=  order.food.name %></td>
+              <td> <%= order.quantity %></td>
+              <td>$<%= order.food.price %></td>
+          </tr>
+        <% end %>
+    </tbody>
+  </table>
+  <div class="row bill">
+    <h3>Total :$<%= @party.bill %></h3>
     <% @tax = @party.bill-(@party.bill*0.8875) %>
-    <%#= @party.bill-(@party.bill*0.8875) %>
-    <h3>tax: $<%= @tax %></h3>
+    <h4>tax: $<%= @tax %></h4>
     <% @includeTax = @tax+@party.bill %>
-    <h2>Total include tax: $<%= @includeTax %></h2>
-    <h2>recommended tips: </h2>
-    <h3>10%: $ <%= '%.2f' % (@includeTax*0.1) %></h3>
-    <h3>15%: $ <%= '%.2f' % (@includeTax*0.15) %></h3>
-    <h3>20%: $ <%= '%.2f' % (@includeTax*0.2) %></h3>
+    <h3>Total include tax: $<%= @includeTax %></h3>
+    <h4>recommended tips: </h4>
+    <h4>10%: $ <%= '%.2f' % (@includeTax*0.10) %></h4>
+    <h4>15%: $ <%= '%.2f' % (@includeTax*0.15) %></h4>
+    <h4>20%: $ <%= '%.2f' % (@includeTax*0.2) %></h4>
 
     <%= form_for @party do |party|%>
       <%= party.hidden_field :pay_status, :value => true %>
-      <%= party.submit '** PAID **'%>
+      <%= party.submit '** PAID **' ,class: 'btn btn-info'%>
     <%end%>
+    </div>

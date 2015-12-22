@@ -1,57 +1,50 @@
-<h1>Show page parties</h1>
-    number of people: <%= @party.nmofpeople %><br>
-    pay_status: <%= @party.pay_status %><br>
-    <!-- bill: <%#=@total %><br> -->
-    Mood: <%= @party.mood %><br>
-    table name: <%= @party.table.name %><br>
-    location: <%= @party.table.location %><br>
+<div class="row party">
+<h1>your party</h1>
+<ul>
+  <li>number of people: <%= @party.nmofpeople %></li>
+  <li>pay status: <%= @party.pay_status %></li>
+  <li>Mood: <%= @party.mood %></li>
+  <li>table name: <%= @party.table.name %></li>
+  <li>location: <%= @party.table.location %></li>
 
-    orders: <br>
-    <ol>
-      <% @total = 0 %>
-        <% @orders.each do |order| %>
-        <% if order.party==nil %>
-        <% else %>
-          <% if @party.id == order.party.id %>
-          <li>
-            <% if  order.active %>
-            <h4>Ready</h4>
-            <% else %>
-            <h3>On the way</h3>
-            <% end %>
-            <%= order.quantity %>  *  <%= order.food.name %> :<%= order.food.price%>$
-            <% @total+=order.food.price*order.quantity %>
-            <%= button_to "Delete order", order_path(order.id), method: 'delete' %>
+  <li> orders:
+    <%= button_to "new order", new_party_order_path(@party.id), method: 'get', class: "btn btn-success" %>
+      <ol>
+        <% @total = 0 %>
+          <% @orders.each do |order| %>
+          <% if order.party==nil %>
+          <% else %>
+            <% if @party.id == order.party.id %>
+            <li>
+              <% if  order.active %>
+              <h4>Ready</h4>
+              <% else %>
+              <h3>On the way</h3>
+              <% end %>
+              <%= order.quantity %>  *  <%= order.food.name %> :<%= order.food.price%>$
+              <% @total+=order.food.price*order.quantity %>
+              <%= button_to "Delete order", order_path(order.id), method: 'delete', class: "btn btn-danger" %>
 
-          </li>
-        <% end %>
+            </li>
+          <% end %>
 
-        <% end %>
+          <% end %>
 
-        <% end %>
-    </ol>
-  TOTAL: $<%= @total %><br>
+          <% end %>
+      </ol>
+    </li>
+  </ul>
+  <h3>TOTAL: $<%= @total %></h3>
   <%= form_for @party do |party|%>
     <%= party.hidden_field :bill, :value => @total %>
-    <%= party.submit %>
+    <%= party.submit 'prepare bill' , class: "btn btn-info"%>
   <%end%>
 
-
-    <%= link_to "new order", new_party_order_path(@party.id) %>
-
-
-    <!-- create_table :parties do |t|
-      t.string :name
-      t.integer :nmofpeople
-      t.boolean :pay_status
-      t.decimal :bill
-      t.string :mood
-      t.integer :order_id
-      t.integer :table_id -->
 
     <div class="nav">
     <%= button_to 'Edit party', edit_party_path(@party), method: :get, class: "btn btn-warning" %>
     <!-- <a class="btn btn-primary" href="/voyages" role="button">Back to voyages</a> -->
     <a class="btn btn-primary" href="/parties" role="button">Back to parties</a>
 
+  </div>
   </div>
