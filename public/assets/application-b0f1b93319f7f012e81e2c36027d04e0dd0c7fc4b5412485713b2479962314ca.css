@@ -1,0 +1,98 @@
+/* line 4, /Users/aleksa/code/wdi/Restaurant/RestaurantApp/app/assets/stylesheets/admins.scss */
+#log_in, #sign_up, #admin {
+  margin: 5% auto;
+  text-align: center;
+  width: 50%;
+}
+
+/* line 9, /Users/aleksa/code/wdi/Restaurant/RestaurantApp/app/assets/stylesheets/admins.scss */
+.form {
+  width: 100%;
+}
+/* line 4, /Users/aleksa/code/wdi/Restaurant/RestaurantApp/app/assets/stylesheets/parties.scss */
+.party {
+  text-align: left;
+  margin: 0 auto;
+}
+
+/* line 9, /Users/aleksa/code/wdi/Restaurant/RestaurantApp/app/assets/stylesheets/parties.scss */
+.bill {
+  text-align: right;
+}
+
+/* line 13, /Users/aleksa/code/wdi/Restaurant/RestaurantApp/app/assets/stylesheets/parties.scss */
+#parties, .parties {
+  text-align: center;
+  margin: 0 auto;
+}
+/* line 4, /Users/aleksa/code/wdi/Restaurant/RestaurantApp/app/assets/stylesheets/tables.scss */
+.log_out {
+  text-align: right;
+}
+/* line 4, /Users/aleksa/code/wdi/Restaurant/RestaurantApp/app/assets/stylesheets/welcome.scss */
+#weclome {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 2em;
+}
+
+/* line 9, /Users/aleksa/code/wdi/Restaurant/RestaurantApp/app/assets/stylesheets/welcome.scss */
+.btn {
+  width: 150px;
+  margin: 2px;
+}
+
+/* line 13, /Users/aleksa/code/wdi/Restaurant/RestaurantApp/app/assets/stylesheets/welcome.scss */
+span {
+  font-family: 'Permanent Marker', cursive;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+ body {
+   background-image: url('http://eskipaper.com/images/cool-light-green-wallpaper-2.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+ }
+ span {
+   font-family: 'Permanent Marker', cursive;
+ }
+
+#parties, .create,{
+  margin: 0 auto;
+  text-align: center;
+  width: 70%%;
+}
+img {
+  width: 60px;
+  height: 40px;
+}
+
+#logo {
+  padding: 0;
+  width: 40px;
+  height: 25px;
+  float: right;
+}
+
+.edit_mode{
+  margin: 0 auto;
+  text-align: center;
+
+}
+.inside {
+  text-align: left;
+}
