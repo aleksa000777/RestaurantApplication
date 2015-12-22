@@ -1,5 +1,5 @@
 # GekkoRest App #
-![GekkoRest](/images/geko.png)
+![GekkoRest](/public/img/geko.png)
 user stories, explanations of the technologies used, the approach taken, screen shots, etc.
 This is restaurant app, what has functionality to:
 *seat the parties
