@@ -1,5 +1,5 @@
 # GekkoRest App #
-![GekkoRest](/public/img/geko.png)
+![GekkoRest](./public/img/geko.png)
 
 
 This is restaurant app, what has functionality to:
@@ -17,7 +17,7 @@ This is restaurant app, what has functionality to:
 *as chef you can see orders and set it as done*
 
 *as an admin you can add servers and add/edit the food in restaurant*
-
+ 
 ## main page ##
 ![1](/public/img/1.png)
 ## party view, where you can add order, see the status(ready/on the way) and see the total bill ##
