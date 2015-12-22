@@ -14,3 +14,28 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).ready(function(){
+  myFunction();
+})
+var myVar;
+function myFunction() {
+    myVar = setInterval(init, 3000);
+}
+
+  function init(){
+    var $orderRow = $('#order-time');
+    $orderRow.children('tr').each(function(){
+        var $row = $(this);
+        var time = $row.data("timer");
+
+        if (time < 3){
+          $row.css('background-color', 'green');
+        } else if (time >= 9){
+          $row.css('background-color', 'red');
+        } else if (time >= 6){
+          $row.css('background-color', 'orange');
+        } else if (time >= 3){
+          $row.css('background-color', 'yellow');
+        }
+  });
+}

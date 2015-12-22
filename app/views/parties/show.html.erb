@@ -8,7 +8,7 @@
   <li>location: <%= @party.table.location %></li>
 
   <li> orders:
-    <%= button_to "new order", new_party_order_path(@party.id), method: 'get', class: "btn btn-success" %>
+    <%= button_to "new order", new_party_order_path(@party.id), method: 'get', class: "btn btn-success" , id: "timer"%>
       <ol>
         <% @total = 0 %>
           <% @orders.each do |order| %>
@@ -22,6 +22,7 @@
               <h3>On the way</h3>
               <% end %>
               <%= order.quantity %>  *  <%= order.food.name %> :<%= order.food.price%>$
+              <div class="timer"></div>
               <% @total+=order.food.price*order.quantity %>
               <%= button_to "Delete order", order_path(order.id), method: 'delete', class: "btn btn-danger" %>
 
@@ -43,7 +44,6 @@
 
     <div class="nav">
     <%= button_to 'Edit party', edit_party_path(@party), method: :get, class: "btn btn-warning" %>
-    <!-- <a class="btn btn-primary" href="/voyages" role="button">Back to voyages</a> -->
     <a class="btn btn-primary" href="/parties" role="button">Back to parties</a>
 
   </div>

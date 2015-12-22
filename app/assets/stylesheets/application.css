@@ -47,3 +47,6 @@ img {
 .inside {
   text-align: left;
 }
+th {
+  text-align: center;
+}
