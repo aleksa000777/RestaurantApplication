@@ -12,6 +12,7 @@ class AdminsController < ApplicationController
   end
 
   def index
+      authenticate!
       @server = Server.new
       @servers = Server.all
   end

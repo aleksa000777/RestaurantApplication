@@ -38,3 +38,12 @@ img {
   height: 25px;
   float: right;
 }
+
+.edit_mode{
+  margin: 0 auto;
+  text-align: center;
+
+}
+.inside {
+  text-align: left;
+}

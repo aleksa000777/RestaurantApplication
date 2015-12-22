@@ -1,9 +1,11 @@
+<div class="row parties">
 <h1>woow food!yammi</h1>
+<%= button_to "New food", new_food_path, method: 'get', class: "btn btn-success" %>
 
 <% @foods.each do |food| %>
-  <h3> <%= food.name %> </h3>
-  <p> <%= food.category %> </p>
-  <h5> Price: <%=food.price %> </h5>
+  <h3> Name: <%= food.name %> </h3>
+  <p> Category: <%= food.category %> </p>
+  <h5> Price: $<%=food.price %> </h5>
   <h5> Description: <%= food.description %> </h5>
   <span>
     <%= link_to "Edit food", edit_food_path(food.id) %>
@@ -11,8 +13,8 @@
     <%= link_to "Delete food", food_path(food.id), method: 'delete' %>
   </span>
 <% end %>
+</div>
 
-<h4> <%= link_to "New food", new_food_path %>  </h4>
 
 <!-- t.string :name
 t.string :category
