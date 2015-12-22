@@ -9,8 +9,16 @@
 .bill {
   text-align: right;
 }
+.bill_table tr th{
+  text-align: left;
+
+}
 
 #parties, .parties {
+  text-align: center;
+  margin: 0 auto;
+}
+.receipt{
   text-align: center;
   margin: 0 auto;
 }

@@ -1,26 +1,30 @@
 <div class="row" id="parties">
 <h1>Parties</h1>
 <%= button_to "New Party", new_party_path, class: 'btn btn-success', method: :get %>
-<% @parties.each do |party| %>
-  <% if party.table == nil%>
-  <% else %>
-  <h3>Table: <a href="/tables/<%= party.table.id %>/"><%= party.table.name %></a></h3>
-      <% party.table.update_attribute :status, :value => false %>
-  <h4>Server: <%= party.server.name %></h4>
-  <h5> Number of people: <%= party.nmofpeople %> </h5>
-  <h5>Pay status:  <%= party.pay_status %> </h5>
-  <h5> Bill: $ <%= party.bill %>
-    <% if party.bill==nil %>
-    <% else %>
-      </h5> <a href="/party/<%= party.id %>/bill">RECIEPT</a>
-    <% end %>
-    <h5> Mood of party: <%= party.mood %> </h5>
-    <%= button_to "Edit party", edit_party_path(party.id), class: 'btn btn-warning', method: :get %>
-    <%= button_to "View party", party_path(party.id), class: 'btn btn-info', method: :get %>
-    <%= button_to "Delete party", party_path(party.id), class: 'btn btn-danger', method: 'delete' %>
-    <% end %>
-  <% end %>
+  <div class="row">
+    <% @parties.each do |party| %>
+      <% if party.table == nil%>
+      <% else %>
+      <div class="col-xs-3">
+      <h3>Table: <a href="/tables/<%= party.table.id %>/"><%= party.table.name %></a></h3>
+          <% party.table.update_attribute :status, :value => false %>
+      <h4>Server: <%= party.server.name %></h4>
+      <h5> Number of people: <%= party.nmofpeople %> </h5>
+      <h5>Pay status:  <%= party.pay_status %> </h5>
+      <h5> Bill: $ <%= party.bill %>
+        <% if party.bill==nil %>
+        <% else %>
+          </h5> <a href="/party/<%= party.id %>/bill">RECIEPT</a>
+        <% end %>
+        <h5> Mood of party: <%= party.mood %> </h5>
+        <%= button_to "Edit party", edit_party_path(party.id), class: 'btn btn-warning', method: :get %>
+        <%= button_to "View party", party_path(party.id), class: 'btn btn-info', method: :get %>
+        <%= button_to "Delete party", party_path(party.id), class: 'btn btn-danger', method: 'delete' %>
+        <% end %>
+        </div>
+      <% end %>
   </div>
+</div>
 
 
       <%#= link_to "View party", party_path(party.id) %>

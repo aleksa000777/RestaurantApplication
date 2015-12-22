@@ -1,3 +1,4 @@
+<div class="row col-xs-6 receipt">
 <h1>Thank You!</h1>
 
    Table name: <%= @table.name %><br>
@@ -5,7 +6,7 @@
    Server: <%= @party.server.name %>
 
     <table class="table col-xs-6">
-      <thead>
+      <thead class="bill_table ">
           <tr>
             <th>Food Item</th>
             <th>Quantity</th>
@@ -38,3 +39,4 @@
       <%= party.submit '** PAID **' ,class: 'btn btn-info'%>
     <%end%>
     </div>
+</div>

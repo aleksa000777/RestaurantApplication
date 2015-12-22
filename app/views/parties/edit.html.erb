@@ -12,10 +12,10 @@
   <%#= f.text_field :name %><br> -->
   <%= f.label :nmofpeople, "Number of people" %>
   <%= f.number_field :nmofpeople %><br>
-  <%= label :pay_status, "no paid" %>
-  <%= f.radio_button :pay_status, false , :checked => true , :value => false %><br>
-  <%= label :pay_status, "paid"%>
-  <%= f.radio_button :pay_status, true, :value => true%><br>
+  <!-- <%#= label :pay_status, "no paid" %>
+  <%#= f.radio_button :pay_status, false , :checked => true , :value => false %><br>
+  <%#= label :pay_status, "paid"%>
+  <%#= f.radio_button :pay_status, true, :value => true%><br> -->
   <%= f.label :mood, "mood" %>
   <%= f.text_field :mood %><br>
   <%= f.submit 'edit party', class: 'btn btn-warning'%>

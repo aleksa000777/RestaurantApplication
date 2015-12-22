@@ -6,17 +6,6 @@
     Status: <%= @table.status %><br>
     shape: <%= @table.shape %><br>
     location: <%= @table.location %><br>
-    <!-- Server name: <%#= @table.server.name %><br> -->
-
-
-
-    <!-- create_table :tables do |t|
-      t.string :name
-      t.boolean :status
-      t.string :shape
-      t.string :location
-      t.integer :party_id
-      t.integer :server_id -->
 
     <div class="nav">
     <%= button_to 'Edit table', edit_table_path(@table), method: :get, class: "btn btn-warning" %>
