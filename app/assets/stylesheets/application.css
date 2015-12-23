@@ -18,6 +18,7 @@
    background-repeat: no-repeat;
    background-size: cover;
    font-family: 'Cinzel', serif;
+   min-height: 100vh;
  }
  span {
    font-family: 'Permanent Marker', cursive;

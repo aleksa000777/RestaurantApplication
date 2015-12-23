@@ -3,7 +3,7 @@
   <%= button_to "new table", new_table_path, method: 'get', class: "btn btn-success" %>
   <div class="row">
     <% @tables.each do |table| %>
-    <div class="col-xs-3">
+    <div class="col-md-3">
       <h3>Table name <%= table.name %> </h3>
       <p> Table status: <%= table.status %> </p>
       <p> Table shape: <%= table.shape %> </p>

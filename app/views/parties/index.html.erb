@@ -5,7 +5,7 @@
     <% @parties.each do |party| %>
       <% if party.table == nil%>
       <% else %>
-      <div class="col-xs-3">
+      <div class="col-md-3">
       <h3>Table: <a href="/tables/<%= party.table.id %>/"><%= party.table.name %></a></h3>
           <% party.table.update_attribute :status, :value => false %>
       <h4>Server: <%= party.server.name %></h4>
