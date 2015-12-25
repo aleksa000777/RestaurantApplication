@@ -16,11 +16,13 @@
 //= require_tree .
 $(document).ready(function(){
   myFunction();
+  bill();
 })
 var myVar;
 function myFunction() {
     myVar = setInterval(init, 3000);
 }
+
 
   function init(){
     var $orderRow = $('#order-time');
@@ -38,4 +40,20 @@ function myFunction() {
           $row.css('background-color', 'yellow');
         }
   });
+}
+
+function bill(){
+  $('#euro').click(function(){
+    $('#euro').hide();
+    $('#us').show();
+    $('.dollar').html('€')
+    $('.price').each(function(){
+      var $val = $(this).text();
+      $(this).html(($val*0.91).toFixed(2))
+    })
+  })
+
+  $('#us').click(function(){
+    location.reload();
+  })
 }

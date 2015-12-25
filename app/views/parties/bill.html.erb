@@ -1,4 +1,12 @@
 <div class="row col-xs-6 receipt">
+  <i class="fa fa-eur" id="euro"></i>
+  <i class="fa fa-usd" id="us"></i>
+
+
+
+
+
+
 <h1>Thank You!</h1>
 
    Table name: <%= @table.name %><br>
@@ -18,21 +26,49 @@
             <tr>
               <td><%=  order.food.name %></td>
               <td> <%= order.quantity %></td>
-              <td>$<%= order.food.price %></td>
+              <td class="price"><%= order.food.price %></td>
           </tr>
         <% end %>
     </tbody>
   </table>
   <div class="row bill">
-    <h3>Total :$<%= @party.bill %></h3>
-    <% @tax = @party.bill-(@party.bill*0.8875) %>
-    <h4>tax: $<%= @tax %></h4>
-    <% @includeTax = @tax+@party.bill %>
-    <h3>Total include tax: $<%= @includeTax %></h3>
+    <h3>Total :<span class='dollar'>$</span>
+        <span class="price">
+        <%= @party.bill %>
+      </span>
+    </h3>
+
+     <% @tax = @party.bill-(@party.bill*0.8875) %>
+
+    <h4>tax: <span class='dollar'>$</span>
+      <span class="price">
+      <%= @tax %>
+    </span>
+    </h4>
+
+   <% @includeTax = @tax+@party.bill %>
+
+    <h3>Total include tax: <span class='dollar'>$</span>
+<span class="price">
+      <%= @includeTax %>
+    </span>
+  </h3>
     <h4>recommended tips: </h4>
-    <h4>10%: $ <%= '%.2f' % (@includeTax*0.10) %></h4>
-    <h4>15%: $ <%= '%.2f' % (@includeTax*0.15) %></h4>
-    <h4>20%: $ <%= '%.2f' % (@includeTax*0.2) %></h4>
+    <h4>10%: <span class='dollar'>$</span>
+<span class="price">
+       <%= '%.2f' % (@includeTax*0.10) %>
+</span>
+     </h4>
+    <h4>15%: <span class='dollar'>$</span>
+<span class="price">
+      <%= '%.2f' % (@includeTax*0.15) %>
+</span>
+    </h4>
+    <h4>20%: <span class='dollar'>$</span>
+<span class="price">
+      <%= '%.2f' % (@includeTax*0.2) %>
+</span>
+    </h4>
 
     <%= form_for @party do |party|%>
       <%= party.hidden_field :pay_status, :value => true %>

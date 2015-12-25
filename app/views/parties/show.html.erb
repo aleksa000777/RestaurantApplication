@@ -36,10 +36,17 @@
     </li>
   </ul>
   <h3>TOTAL: $<%= @total %></h3>
+
+
+
+
+
   <%= form_for @party do |party|%>
     <%= party.hidden_field :bill, :value => @total %>
-    <%= party.submit 'prepare bill' , class: "btn btn-info"%>
-  <%end%>
+    <%= party.submit 'Prepere bill' , class: "btn btn-info"%>
+  <% end %>
+
+  
 
 
     <div class="nav">

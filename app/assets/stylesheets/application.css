@@ -23,6 +23,9 @@
  span {
    font-family: 'Permanent Marker', cursive;
  }
+ span.dollar, span.price{
+   font-family: 'Cinzel', serif;
+ }
 
 #parties, .create,{
   margin: 0 auto;
@@ -51,4 +54,11 @@ img {
 }
 th {
   text-align: center;
+}
+
+#euro, #us{
+  font-size: 2em;
+}
+#us{
+  display: none;
 }
