@@ -47,8 +47,8 @@ class PartiesController < ApplicationController
   def destroy
     @party = Party.find(params[:id])
     @table = @party.table
-    @table.status = true
-    @table.save
+     @table.clean = 1
+     @table.save
     @party.destroy
 
 

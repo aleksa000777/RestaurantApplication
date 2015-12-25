@@ -1,4 +1,5 @@
 <%= form_for @table do |f| %>
+  <%= f.hidden_field :clean, value: 0 %>
   <%= f.label :name, "name" %>
   <%= f.text_field :name %><br>
   <%= f.label :shape, "shape of table" %>

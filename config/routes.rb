@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :admins
   get '/log_in' => 'admins#log_in'
   get '/party/:id/bill' =>'parties#bill'
-
+  post '/tables/:id' => 'tables#clean'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

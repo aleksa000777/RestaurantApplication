@@ -42,9 +42,17 @@ class TablesController < ApplicationController
     redirect_to tables_path
   end
 
+  def clean
+    @table = Table.find(params[:id])
+    @table.status = true
+    @table.clean = 0
+    @table.save
+    redirect_to tables_path
+  end
+
   private
   def table_params
-    parameters = params.require(:table).permit(:party_id, :server_id, :name, :status, :shape, :location)
+    parameters = params.require(:table).permit(:party_id, :server_id, :name, :status, :shape, :location, :clean)
   end
 
 end
