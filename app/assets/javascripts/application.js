@@ -27,10 +27,6 @@ function initPage() {
   bill();
 }
 
-// $(document).ready(function(){
-//   myFunction();
-//   bill();
-// })
 var myVar;
 function myFunction() {
     myVar = setInterval(init, 3000);
