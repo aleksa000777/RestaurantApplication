@@ -13,11 +13,24 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require turbolinks
 //= require_tree .
-$(document).ready(function(){
+
+$(function() {
+  initPage();
+});
+$(window).bind('page:change', function() {
+  initPage();
+});
+function initPage() {
   myFunction();
   bill();
-})
+}
+
+// $(document).ready(function(){
+//   myFunction();
+//   bill();
+// })
 var myVar;
 function myFunction() {
     myVar = setInterval(init, 3000);
