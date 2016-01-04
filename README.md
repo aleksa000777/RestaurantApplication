@@ -6,6 +6,8 @@ This is restaurant app, what has functionality to:
 
 *seat the parties to the available table*
 
+*tables after party are dirty so server must clean it before set new party*
+
 *view and edit party/create new*
 
 *set the server*
@@ -15,6 +17,8 @@ This is restaurant app, what has functionality to:
 *give a receipt with tax and tips*
 
 *as chef you can see orders and set it as done*
+
+*as chef you can see the time left since the order was made*
 
 *as an admin you can add servers and add/edit the food in restaurant*
  
