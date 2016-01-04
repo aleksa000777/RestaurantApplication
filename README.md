@@ -37,3 +37,4 @@ Enjoy the app!
 3. Bootstrap
 4. SQL/Database
 5. Sinatra/ActiveRecord
+6. JavaScript/JQuery
