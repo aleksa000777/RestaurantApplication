@@ -26,7 +26,7 @@
             <tr>
               <td><%=  order.food.name %></td>
               <td> <%= order.quantity %></td>
-              <td class="price"><%= order.food.price %></td>
+              <td class="price"><%= number_with_precision(order.food.price, :precision => 2) %></td>
           </tr>
         <% end %>
     </tbody>
@@ -34,7 +34,7 @@
   <div class="row bill">
     <h3>Total :<span class='dollar'>$</span>
         <span class="price">
-        <%= @party.bill %>
+        <%= number_with_precision(@party.bill, :precision => 2) %>
       </span>
     </h3>
 
@@ -42,7 +42,7 @@
 
     <h4>tax: <span class='dollar'>$</span>
       <span class="price">
-      <%= @tax %>
+      <%= number_with_precision(@tax, :precision => 2) %>
     </span>
     </h4>
 
@@ -50,7 +50,7 @@
 
     <h3>Total include tax: <span class='dollar'>$</span>
 <span class="price">
-      <%= @includeTax %>
+      <%= number_with_precision(@includeTax, :precision => 2) %>
     </span>
   </h3>
     <h4>recommended tips: </h4>

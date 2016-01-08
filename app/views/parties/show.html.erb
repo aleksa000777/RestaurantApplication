@@ -21,7 +21,7 @@
               <% else %>
               <h3>On the way</h3>
               <% end %>
-              <%= order.quantity %>  *  <%= order.food.name %> :<%= order.food.price%>$
+              <%= order.quantity %>  *  <%= order.food.name %> :<%= number_to_currency(order.food.price)%>
               <div class="timer"></div>
               <% @total+=order.food.price*order.quantity %>
               <%= button_to "Delete order", order_path(order.id), method: 'delete', class: "btn btn-danger" %>
@@ -35,7 +35,7 @@
       </ol>
     </li>
   </ul>
-  <h3>TOTAL: $<%= @total %></h3>
+  <h3>TOTAL: <%= number_to_currency(@total) %></h3>
 
 
 
@@ -46,7 +46,7 @@
     <%= party.submit 'Prepere bill' , class: "btn btn-info"%>
   <% end %>
 
-  
+
 
 
     <div class="nav">
