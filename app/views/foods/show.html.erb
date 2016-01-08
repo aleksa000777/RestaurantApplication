@@ -1,6 +1,6 @@
 <h1>Show page food</h1>
     Name: <%= @food.name %><br>
-    Price: <%= @food.price %><br>
+    Price: $<%= number_with_precision(@food.price, :precision => 2) %><br>
     description: <%= @food.description %><br>
 
 
