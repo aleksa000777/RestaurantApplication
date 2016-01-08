@@ -5,7 +5,7 @@
 <% @foods.each do |food| %>
   <h3> Name: <%= food.name %> </h3>
   <p> Category: <%= food.category %> </p>
-  <h5> Price: $<%=food.price %> </h5>
+  <h5> Price: $<%=number_with_precision(food.price, :precision => 2) %> </h5>
   <h5> Description: <%= food.description %> </h5>
   <span>
     <%= link_to "Edit food", edit_food_path(food.id) %>

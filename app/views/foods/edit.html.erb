@@ -4,7 +4,19 @@
 
 <%= button_to "Log Out", sessions_path, method: :delete , class: 'btn btn-danger'%>
 
-<%= render "form" %>
+<%= form_for @food do |f| %>
+  <%= f.label :name, "Name of course" %>
+  <%= f.text_field :name %><br>
+  <%= f.label :category, "Category" %>
+  <%= f.text_field :category %><br>
+  <%= f.label :description, "Description" %>
+  <%= f.text_field :description %><br>
+  <%= f.label :price, "Price" %>
+  <%= f.number_field :price %><br>
+  <%-# Admin: <%= current_admin.username <br> -%>
+  <%= f.submit 'SAVE', class: 'btn btn-success'%>
+
+<% end %>
 
 <% if flash[:error] %>
   <% flash[:error].each do |error| %>
